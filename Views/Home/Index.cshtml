@@ -1,0 +1,22 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is a proxy for the SSOProxy provided by STIL</p>
+    <a href="https://viden.stil.dk/display/OFFSKOLELOGIN/SSOproxy+HTTP#SSOproxyHTTP-Hvordanvirkerdet?">STIL SSOProxy documentation</a>
+    <a href="">Github repo for this project</a>
+</div>
+<div>
+    <p></p>
+</div>
+
+<div class="text-center">
+    <a href="@Url.Action("Login", "Authentication")?id=@Model.Id&path=@Model.Path&auth=@Model.Auth">Test - access a protected ressource</a>
+</div>
+
+<div class="text-center">
+    @Html.ActionLink("Logout (does not logout of the federation)", "Logout", "Authentication")
+</div>
